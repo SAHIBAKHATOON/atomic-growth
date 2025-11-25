@@ -1,0 +1,1591 @@
+:root {
+  --bg: #030305;
+  --card: rgba(255, 255, 255, 0.03);
+  --stroke: rgba(255, 255, 255, 0.1);
+  --text: #f5f5f7;
+  --muted: rgba(255, 255, 255, 0.65);
+  --accent: #7c3aed;
+  --accent-hot: #ff5ec7;
+  font-family: 'Space Grotesk', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  color: #fff;
+  /* background: var(--bg); */
+}
+
+#root {
+  width: 100%;
+}
+/* Entire Navbar */
+.navbar {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+/* Logo */
+.logo {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.logo span {
+  color: #4A5BFF;
+}
+
+/* Menu container */
+.menu-container {
+  display: flex;
+  gap: 25px;
+  background: #000;
+  padding: 22px 35px;
+  border-radius: 50px;
+  border: 1px solid #1e1e1e;
+}
+
+/* Menu links */
+.menu-item {
+  font-size: 14px;
+  border: none;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu-item:hover {
+  opacity: 0.7;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background: #0F0F0F;
+  border: 1px solid #222;
+  border-radius: 10px;
+  width: 150px;
+  padding: 10px 0;
+}
+
+.dropdown-content p {
+  padding: 10px 15px;
+  margin: 0;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.dropdown-content p:hover {
+  background: #1A1A1A;
+}
+
+/* CTA Button */
+.cta-btn {
+  border: 1px solid white;
+  padding: 10px 25px;
+  border-radius: 40px;
+  font-size: 14px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  background: white;
+  color: black;
+}
+/* ---------------------------------------------------- */
+/* 1. Global/Theme Setup (Recommended)                  */
+/* ---------------------------------------------------- */
+:root {
+  --color-dark-bg: #000000;
+  --color-white: #ffffff;
+  --color-primary-highlight: #74749f; /* Purple-blue block */
+  --color-secondary-highlight: #c17e65; /* Pink-orange block */
+  --color-tag-yellow: #f8c950;
+  --color-tag-pink: #d67a7a;
+  /* Use a high-impact, modern font for replication */
+  --font-family-primary: 'Arial', sans-serif; 
+}
+
+/* Ensure the whole section takes up the screen space */
+.hero {
+  min-height: 100vh;
+  /* background-color: var(--color-dark-bg); */
+  color: var(--color-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Crucial for positioning internal elements */
+  overflow: hidden; /* Prevent background elements from causing scrollbars */
+  padding: 60px 20px; /* Base padding for responsiveness */
+  text-align: center; /* Center content horizontally */
+}
+
+/* ---------------------------------------------------- */
+/* 2. Content Layout (Flexbox/Grid for positioning)     */
+/* ---------------------------------------------------- */
+.hero-content {
+  /* max-width: 900px; Control the overall width of text */
+  width: 100%;
+  z-index: 10; /* Keep content above decorative elements */
+  position: relative;
+  top: 100px;
+}
+
+/* Heading Structure and Tags */
+.hero-heading-wrapper {
+  position: relative;
+  display: flex; /* Helps manage the title blocks */
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-title {
+  font-size: 5rem; /* Large font size for impact (adjust based on screen) */
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+
+/* Colored Background Blocks */
+.title-block {
+  display: inline-block; /* Allows padding and background */
+  padding: 0 15px; /* Horizontal padding for visual spacing */
+  margin: 5px 0;
+  white-space: nowrap; /* Keep the whole title on one line if possible */
+}
+
+.block-top {
+  background-color: var(--color-primary-highlight);
+}
+
+.block-bottom {
+  background-color: var(--color-secondary-highlight);
+  margin-left: 10px; /* Slight offset for the second block */
+}
+
+/* Description Text */
+.hero-description {
+  max-width: 550px;
+  margin: 40px auto 0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* ---------------------------------------------------- */
+/* 3. Decorative Tags (Small colored text boxes)        */
+/* ---------------------------------------------------- */
+.hero-tag {
+  position: absolute;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 5px;
+  z-index: 5; 
+}
+
+.tag-top-right {
+  top: 50px; /* Adjust vertically */
+  right: -10px; /* Position off to the right */
+  background-color: var(--color-tag-yellow);
+  color: var(--color-dark-bg);
+}
+
+.tag-bottom-left {
+  bottom: 100px; /* Adjust vertically */
+  left: -150px; /* Position off to the left */
+  background-color: var(--color-tag-pink);
+  color: var(--color-white);
+}
+
+/* ---------------------------------------------------- */
+/* 4. Background Decorative Shapes (Complex positioning) */
+/* ---------------------------------------------------- */
+.hero-decor {
+  position: absolute;
+  /* Use pseudo-elements or background images for complex shapes */
+  width: 50px; /* Placeholder size */
+  height: 50px;
+  z-index: 1; /* Below the content */
+}
+
+.decor-top-left {
+  /* Abstract white-outline triangle */
+  top: 20%;
+  left: 10%;
+  border: 2px solid var(--color-white);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  background: transparent;
+}
+
+.star {
+  /* Simple star/asterisk shapes */
+  background-color: var(--color-white);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  width: 10px;
+  height: 10px;
+}
+
+.decor-top-right {
+  top: 5%;
+  right: 20%;
+}
+
+.decor-center-star {
+  top: 50%;
+  left: 20%;
+  transform: rotate(45deg);
+}
+
+/* (The remaining decor elements follow similar absolute positioning rules) */
+
+
+/* ---------------------------------------------------- */
+/* 5. Responsive Design (Media Queries)                 */
+/* ---------------------------------------------------- */
+
+@media (max-width: 800px) {
+  /* Adjust font size for tablet/smaller screens */
+  .hero-title {
+      font-size: 3.5rem;
+  }
+  
+  /* Center tags on smaller screens or hide them if they clutter the view */
+  .tag-top-right,
+  .tag-bottom-left {
+      position: static;
+      margin: 10px auto;
+  }
+  .hero-heading-wrapper {
+      flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+  /* Adjust font size for mobile */
+  .hero-title {
+      font-size: 2.5rem;
+      line-height: 1.2;
+  }
+  
+  /* Stacks the colored blocks vertically on mobile for better viewing */
+  .block-bottom {
+      margin-left: 0;
+  }
+  
+  .hero-description {
+      font-size: 1rem;
+  }
+}
+:root {
+  --color-dark-bg: #000000;
+  --color-white: #ffffff;
+  --card-border-radius: 20px; /* Highly rounded corners */
+  --button-border-radius: 5px; 
+}
+
+/* ---------------------------------------------------- */
+/* 1. Section Container & Layout                        */
+/* ---------------------------------------------------- */
+.services-container {
+  
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cards-grid {
+  display: grid;
+  gap: 30px; /* Space between cards */
+  grid-template-columns: 1fr 1fr; /* Two columns for desktop */
+  max-width: 1200px;
+  width: 100%;
+  z-index: 10;
+}
+
+/* ---------------------------------------------------- */
+/* 2. Service Card Styling (The Key to the Design)      */
+/* ---------------------------------------------------- */
+.service-card {
+  background-color: var(--color-dark-bg);
+  color: var(--color-white);
+  padding: 40px;
+  border-radius: var(--card-border-radius);
+  
+  /* Replicating the distinct, slightly offset white border: */
+  border: 2px solid var(--color-white); /* Main visible border */
+  
+  /* Adding a subtle inner shadow or another border layer might be needed */
+  /* For a true replication, you often need box-shadow for the inner outline */
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4) inset; 
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Push the button to the bottom */
+  min-height: 400px; /* Ensure cards have similar heights */
+  text-align: center;
+}
+
+.card-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.card-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: auto; /* Pushes the button down */
+}
+
+/* ---------------------------------------------------- */
+/* 3. Button Styling (The EXPLORE button)               */
+/* ---------------------------------------------------- */
+.card-button {
+  background-color:  white;
+  color:  black;
+  border: 1px solid var(--color-white);
+  padding: 15px 30px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  
+  /* MODIFICATION FOR CENTERING: */
+  margin: 30px auto 0 auto; 
+  width: fit-content;
+  border-radius: 40px;
+}
+
+.card-button:hover {
+  background-color:  rgb(57, 57, 243);
+  color:  white;
+  border: none;
+}
+
+/* ---------------------------------------------------- */
+/* 4. Responsive Design                                 */
+/* ---------------------------------------------------- */
+@media (max-width: 900px) {
+  /* Stack cards vertically on smaller screens */
+  .cards-grid {
+      grid-template-columns: 1fr;
+  }
+  
+  .service-card {
+      min-height: auto; /* Remove fixed height when stacked */
+  }
+}
+
+/* ---------------------------------------------------- */
+/* 5. Decorative Elements (Star and Triangle)           */
+/* ---------------------------------------------------- */
+.decor-star {
+  /* Style the star as done in the previous response */
+  position: absolute;
+  top: 5%;
+  left: 20%;
+  /* (Use clip-path or background image for the specific star shape) */
+}
+
+.decor-triangle {
+  /* Style the outline triangle as done in the previous response */
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  /* (Use clip-path and border for the specific shape) */
+}
+:root {
+  --color-dark-bg: #1c1c1c; /* Dark gray for sidebar */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-logo-purple: #9090ff; /* Color for 'Growth' */
+  --nav-height: 80px;
+}
+
+.navbar-header {
+  background-color: var(--color-black);
+  width: 100%;
+  position: fixed; /* Fixed at the top */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 20px 0;
+}
+
+.navbar-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ---------------------------------------------------- */
+/* 1. Logo / Brand Name                                 */
+/* ---------------------------------------------------- */
+.navbar-logo {
+  color: var(--color-white);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+  
+
+
+/* ---------------------------------------------------- */
+/* 2. Desktop Navigation (Image 3)                      */
+/* ---------------------------------------------------- */
+.navbar-desktop-links {
+  display: flex;
+  align-items: center;
+  /* Create the white-outlined pill background for the links */
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50px;
+  padding: 0 10px;
+}
+
+.nav-link {
+  color: var(--color-white);
+  text-decoration: none;
+  padding: 15px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--color-logo-purple);
+}
+
+/* Dropdown Arrow for 'PODCASTING' */
+.nav-dropdown {
+  position: relative;
+}
+.dropdown-arrow::after {
+  content: 'v'; /* Simple down arrow character */
+  font-size: 0.7rem;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+/* CTA Button - Desktop */
+.navbar-cta-btn {
+  background: transparent;
+  color: var(--color-white);
+  border: 2px solid var(--color-white);
+  border-radius: 50px;
+  padding: 10px 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  white-space: nowrap; /* Keep button text on one line */
+}
+
+.navbar-cta-btn:hover {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+/* Mobile Toggle Button - Hidden on Desktop */
+.mobile-menu-toggle {
+  display: none; /* Hide by default */
+}
+
+
+/* ---------------------------------------------------- */
+/* 3. Mobile Menu / Sidebar (Image 4)                   */
+/* ---------------------------------------------------- */
+.mobile-menu-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px; /* Width of the sidebar */
+  height: 100%;
+  background-color: var(--color-dark-bg); /* Dark background from image */
+  color: var(--color-white);
+  padding: 40px 20px;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+  transform: translateX(100%); /* Start off-screen */
+  transition: transform 0.3s ease-in-out;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu-sidebar.is-open {
+  transform: translateX(0); /* Slide into view */
+}
+
+/* Close button style */
+.sidebar-close-btn {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: var(--color-white);
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* Mobile CTA Button - same style as desktop CTA */
+.sidebar-cta-btn {
+  background: transparent;
+  color: var(--color-white);
+  border: 2px solid var(--color-white);
+  border-radius: 50px;
+  padding: 10px 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 30px;
+  width: 100%; /* Full width in the mobile menu */
+}
+
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu-sidebar .nav-link {
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  text-align: left;
+}
+.mobile-menu-sidebar .nav-link:last-child {
+  border-bottom: none;
+}
+
+
+/* ---------------------------------------------------- */
+/* 4. MEDIA QUERY: Switch to Mobile View                */
+/* ---------------------------------------------------- */
+@media (max-width: 950px) {
+  
+  /* Hide desktop navigation and CTA */
+  .navbar-desktop-links,
+  .navbar-cta-btn {
+      display: none;
+  }
+
+  /* Show mobile toggle button */
+  .mobile-menu-toggle {
+      display: block;
+      background: none;
+      border: none;
+      color: var(--color-white);
+      font-size: 1.8rem;
+      cursor: pointer;
+  }
+}
+:root {
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-clients-bg: #29403d; /* Subtle dark-green/gray background color for 'Clients' block */
+}
+
+.portfolio-section {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 80px 0;
+  overflow-x: hidden; /* Hide overflow on the section itself */
+}
+
+/* ---------------------------------------------------- */
+/* 1. Main Title Header                                 */
+/* ---------------------------------------------------- */
+.portfolio-header {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  display: inline-block; /* Allows containing the word spans */
+}
+
+.title-word-portfolio {
+  padding-right: 15px;
+}
+
+.title-word-clients {
+  /* Colored background for the word 'Clients' */
+  background-color: var(--color-clients-bg);
+  padding: 5px 10px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------- */
+/* 2. Client Cards Layout and Styling                   */
+/* ---------------------------------------------------- */
+.clients-list-wrapper {
+  /* Container to allow horizontal scrolling */
+  overflow-x: auto;
+  width: 100%;
+  padding: 0 20px; /* Padding for the sides of the visible area */
+  /* Hide scrollbar visually if preferred */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.clients-list-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.clients-list {
+  /* Use flex to keep items horizontal and allow overflow */
+  display: flex;
+  gap: 40px; /* Space between cards */
+  padding-bottom: 20px; /* Space for scrollbar if visible */
+  width: fit-content; /* Critical: allows content to exceed parent width */
+  margin: 0 auto; /* Center the list on wide screens */
+}
+
+.client-card {
+  text-align: center;
+  flex-shrink: 0; /* Prevents items from shrinking on small screens */
+  width: 250px; /* Fixed width for each card */
+}
+
+/* Image/Logo Styling */
+.client-image-wrapper {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 20px auto;
+  border-radius: 50%; /* Makes the container circular */
+  overflow: hidden; /* Important for containing images */
+  background-color: #222; /* Dark background for logos like 'Primary' */
+}
+
+.client-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers the circle */
+  /* Center the image within its wrapper */
+  display: block; 
+}
+
+.client-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.client-title {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7); /* Subtle gray for the title/description */
+}
+
+
+/* ---------------------------------------------------- */
+/* 3. Responsive Adjustments                            */
+/* ---------------------------------------------------- */
+
+@media (max-width: 600px) {
+  .section-title {
+      font-size: 2.5rem;
+  }
+  
+  /* On small screens, ensure the list takes up the whole width 
+     and rely purely on horizontal scrolling */
+  .clients-list {
+      margin: 0;
+  }
+}
+:root {
+  --color-dark-bg: #101010; /* Slightly lighter black for this section */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-tag-green: #385a4f; /* Dark green/teal background for tags */
+  --video-border-radius: 10px;
+}
+
+.testimonial-section {
+  /* background-color: var(--color-dark-bg); */
+  color: var(--color-white);
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.testimonial-content-wrapper {
+  max-width: 900px;
+  width: 100%;
+}
+
+/* ---------------------------------------------------- */
+/* 1. Header and Navigation Arrows                      */
+/* ---------------------------------------------------- */
+.testimonial-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.testimonial-meta-tag {
+  /* background-color: var(--color-tag-green); */
+  color: var(--color-white);
+  padding: 5px 10px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+}
+
+.carousel-nav {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-arrow {
+  background-color: var(--color-dark-bg);
+  color: var(--color-white);
+  border: 1px solid var(--color-white);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-arrow:hover {
+  background-color: var(--color-white);
+  color: var(--color-dark-bg);
+}
+
+/* ---------------------------------------------------- */
+/* 2. Main Quote and Case Study Tag                     */
+/* ---------------------------------------------------- */
+.testimonial-quote {
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.case-study-tag-wrapper {
+  margin-bottom: 50px;
+}
+
+.case-study-tag {
+  /* White outlined box for the case study label */
+  border: 1px solid var(--color-white);
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+  display: inline-block;
+}
+
+/* ---------------------------------------------------- */
+/* 3. Video Embed Area (Visual Replication)             */
+/* ---------------------------------------------------- */
+.video-player-container {
+  /* Use a fixed aspect ratio like 16:9 */
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+  height: 0;
+  overflow: hidden;
+  border-radius: var(--video-border-radius);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Simulated Player Styles (to match the image appearance) */
+.simulated-video-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Use a background image here to replicate the video thumbnail */
+  background-image: url('your-video-thumbnail.jpg'); 
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--video-border-radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #333; /* Fallback color */
+}
+
+.video-overlay {
+  /* Dark overlay to make play button stand out */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.play-icon {
+  font-size: 4rem;
+  color: red; /* Classic YouTube play button color */
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px 10px 10px 15px;
+  line-height: 1;
+}
+
+.video-label {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(0, 0, 0, 0.6);
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.video-cta {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  /* 'Watch Later' and 'Share' text would be placed here */
+}
+
+/* ---------------------------------------------------- */
+/* 4. Responsive Adjustments                            */
+/* ---------------------------------------------------- */
+@media (max-width: 650px) {
+  .testimonial-quote {
+      font-size: 2rem;
+  }
+  
+  .testimonial-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+  }
+  
+  /* Center the quote on mobile if preferred */
+  .testimonial-quote {
+      text-align: center;
+  }
+}
+:root {
+  --color-black-bg: #000000;
+  --color-white-text: #ffffff;
+  
+  /* 1. Precise Card Colors from Image */
+  --card-color-1-yellow: #f5d472; /* Card 1: Light Yellow/Gold */
+  --card-color-2-blue: #7d84d1;   /* Card 2: Muted Blue/Lavender */
+  --card-color-3-red: #e6917e;    /* Card 3: Muted Coral/Salmon */
+  
+  --card-border-radius: 20px;
+  --text-color-on-card: #000000; /* Text is black on the colored cards */
+}
+
+.how-it-works-section {
+  background-color: var(--color-black-bg);
+  color: var(--color-white-text);
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden; 
+}
+
+.how-it-works-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 80px;
+}
+
+/* ---------------------------------------------------- */
+/* 1. Cards Layout and Styling                          */
+/* ---------------------------------------------------- */
+.work-cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 150px; 
+  max-width: 1200px;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.work-card {
+  width: 250px;
+  height: 350px;
+  padding: 40px 30px;
+  border-radius: var(--card-border-radius);
+  position: relative;
+  color: var(--text-color-on-card); /* Text color set to black */
+  
+  /* Subtle Shadow for Depth */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); 
+  
+  /* Animation base state (Hidden and moved to the side) */
+  opacity: 0;
+  transform: translateY(50px); 
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Specific Card Colors and Initial Rotation (Set in React inline style for precision) */
+.card-yellow { background-color: var(--card-color-1-yellow); }
+.card-blue { background-color: var(--card-color-2-blue); }
+.card-red { background-color: var(--card-color-3-red); }
+
+/* Card Content: Faded Number and Text */
+.card-number {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 4rem;
+  font-weight: 900;
+  /* Key style: Faded, dark gray number */
+  color: rgba(0, 0, 0, 0.2); 
+  line-height: 1;
+}
+
+.card-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-top: 50px; 
+  /* Bold specific words in HTML/JSX for the exact look (e.g., <strong>top streaming platforms.</strong>) */
+}
+
+
+/* ---------------------------------------------------- */
+/* 2. Animation State (Scroll Reveal)                   */
+/* ---------------------------------------------------- */
+.work-cards-container.animate-in .work-card {
+  opacity: 1;
+  /* The final transformation includes the calculated rotation from the React component */
+  transform: translateY(0) rotate(var(--card-rotate-value, 0deg)); 
+}
+
+
+/* ---------------------------------------------------- */
+/* 3. Responsive Adjustments                            */
+/* ---------------------------------------------------- */
+@media (max-width: 1000px) {
+  /* Reduce gap on smaller screens */
+  .work-cards-container {
+      gap: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Stack cards vertically for mobile */
+  .work-cards-container {
+      flex-direction: column;
+      gap: 40px;
+      align-items: center;
+  }
+  
+  .work-card {
+      /* Remove rotation for vertical stacking */
+      transform: rotate(0deg) !important;
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  .work-cards-container.animate-in .work-card {
+      transform: translateY(0);
+  }
+  
+  .how-it-works-title {
+      font-size: 2.5rem;
+  }
+}
+:root {
+  /* Background and Text Colors */
+  --color-black-bg: #000000;
+  --color-white-text: #ffffff;
+  
+  /* Metrics and CTA Colors (Based on the image's yellow/gold tone) */
+  --color-metric-yellow: #f8c950;
+  --color-tag-yellow-bg: #f8c950;
+  --color-tag-black-text: #000000;
+  
+  /* Font sizes for exact replication */
+  --title-font-size: 3.5rem;
+  --metric-value-font-size: 4rem;
+}
+
+.approach-section {
+  background-color: var(--color-black-bg);
+  color: var(--color-white-text);
+  /* Adjust vertical padding for visual spacing */
+  padding: 150px 20px 100px 20px; 
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.approach-content-wrapper {
+  max-width: 1000px;
+  width: 100%;
+  text-align: center;
+}
+
+/* ---------------------------------------------------- */
+/* 1. Title and Description                             */
+/* ---------------------------------------------------- */
+.approach-title {
+  font-size: var(--title-font-size);
+  font-weight: 500; /* Title appears slightly less bold than other headings */
+  margin-bottom: 30px;
+}
+
+.approach-description-container {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 80px;
+}
+
+.approach-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  /* Center the text block itself */
+  text-align: center;
+}
+
+/* Side Tag - Positioning is relative to the text block */
+.approach-tag {
+  position: absolute;
+  top: 0;
+  right: -100px; /* Positioned far right of the description container */
+  transform: rotate(5deg); /* Slight tilt */
+  background-color: var(--color-tag-yellow-bg);
+  color: var(--color-tag-black-text);
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 5px;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* ---------------------------------------------------- */
+/* 2. Metrics Grid (9200+, 1.1B+, 240+)                 */
+/* ---------------------------------------------------- */
+.metrics-grid {
+  display: flex;
+  justify-content: center; /* Center the metrics block on the page */
+  gap: 30px;
+  padding: 0 50px;
+  margin-bottom: 50px;
+}
+
+.metric-item {
+  flex-basis: 33.33%;
+  text-align: center;
+}
+
+.metric-value {
+  /* Key style: Large, Yellow-Gold text */
+  font-size: var(--metric-value-font-size);
+  font-weight: 800;
+  color: var(--color-metric-yellow);
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.metric-label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: capitalize; /* 'Videos Created' is capitalized but not uppercase */
+  letter-spacing: 0.5px;
+}
+
+/* ---------------------------------------------------- */
+/* 3. Bottom CTA Button                                 */
+/* ---------------------------------------------------- */
+.metrics-cta-btn {
+  background: transparent;
+  color: var(--color-metric-yellow);
+  border: 2px solid var(--color-metric-yellow);
+  border-radius: 5px;
+  padding: 10px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  /* Center the button */
+  display: block;
+  margin: 0 auto;
+}
+
+.metrics-cta-btn:hover {
+  background-color: var(--color-metric-yellow);
+  color: var(--color-black-bg);
+}
+
+/* ---------------------------------------------------- */
+/* 4. Responsive Adjustments                            */
+/* ---------------------------------------------------- */
+
+@media (max-width: 850px) {
+  .approach-tag {
+      /* Move tag above the description on smaller screens */
+      position: static;
+      display: block;
+      transform: none;
+      margin: 0 auto 20px auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .approach-title {
+      font-size: 2.5rem;
+  }
+
+  .metrics-grid {
+      flex-direction: column;
+      padding: 0;
+      gap: 40px;
+  }
+  
+  .metric-value {
+      font-size: 3rem;
+  }
+}
+.page {
+  min-height: 100vh;
+  background: radial-gradient(circle at 5% 20%, rgba(124, 58, 237, 0.25), transparent 40%),
+    radial-gradient(circle at 80% 0%, rgba(255, 94, 199, 0.22), transparent 45%),
+    linear-gradient(120deg, rgba(3, 3, 5, 0.9), rgba(7, 7, 12, 0.9));
+  color: var(--text);
+  padding: 2rem clamp(1.25rem, 4vw, 4rem) 4rem;
+}
+
+ 
+.hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.75rem, 6vw, 4.75rem);
+  margin: 0.5rem 0 1rem;
+}
+
+.hero-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero-description {
+  color: var(--muted);
+  max-width: 38ch;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.hero-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-video-card {
+  max-width: 360px;
+  width: 100%;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid var(--stroke);
+  background: rgba(2, 2, 4, 0.9);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hero-video-placeholder {
+  aspect-ratio: 9 / 16;
+  border-radius: 1.25rem;
+  border: 1px dashed var(--stroke);
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.caption {
+  color: var(--muted);
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.service-card {
+  border-radius: 1.5rem;
+  padding: 2rem;
+  border: 1px solid var(--stroke);
+  background: var(--card);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.clipping-hero {
+  position: relative;
+  border-radius: 2rem;
+  padding: clamp(2rem, 6vw, 4rem);
+  background: #010101;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: grid;
+  justify-items: center;
+  gap: 2.5rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.clipping-bg-icon {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.04) 45%, transparent 50%);
+  opacity: 0.6;
+  top: 2rem;
+}
+
+.clipping-bg-icon.left {
+  left: clamp(0.5rem, 5vw, 3rem);
+}
+
+.clipping-bg-icon.right {
+  right: clamp(0.5rem, 5vw, 3rem);
+}
+
+.clipping-hero-inner h2 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin: 0.25rem 0 1rem;
+}
+
+.clipping-copy {
+  max-width: 70ch;
+  color: var(--muted);
+  margin: 0 auto 1.5rem;
+}
+
+.clipping-cta {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  padding-inline: 2.4rem;
+}
+
+.clipping-video-shell {
+  position: relative;
+  width: min(960px, 100%);
+  border-radius: 1.75rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(73, 82, 252, 0.1), rgba(255, 255, 255, 0.06));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mute-toggle {
+  border: none;
+  background: #fff;
+  color: #111;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-size: 1.1rem;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  cursor: pointer;
+}
+
+.clipping-video-frame {
+  border-radius: 1.5rem;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(120deg, #4f46e5, #9333ea, #ff5ec7);
+  overflow: hidden;
+  position: relative;
+}
+
+.clipping-video-frame.unmuted {
+  filter: drop-shadow(0 0 40px rgba(255, 94, 199, 0.35));
+}
+
+.video-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.55), transparent 55%),
+    radial-gradient(circle at 70% 60%, rgba(0, 0, 0, 0.35), transparent 60%);
+  mix-blend-mode: screen;
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.section-heading.column {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.slider-controls {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.clients .client-track {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+ 
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  border-radius: 1.25rem;
+  border: 1px solid var(--stroke);
+  text-align: center;
+  padding: 1.75rem 1rem;
+}
+
+.stat-card .value {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.stat-card .label {
+  color: var(--muted);
+}
+
+.videos,
+.case-grid,
+.process-grid,
+.track-tabs {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.videos {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.video-card,
+.case-card,
+.process-card,
+.track-card,
+.testimonial-card,
+.faq-item {
+  border-radius: 1.5rem;
+  border: 1px solid var(--stroke);
+  background: rgba(8, 8, 12, 0.9);
+  padding: 1.75rem;
+}
+
+.video-frame {
+  aspect-ratio: 16 / 9;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+}
+
+.video-frame.muted {
+  background: linear-gradient(135deg, #141414, #2b2b2b);
+}
+
+.video-frame.unmuted {
+  background: linear-gradient(135deg, var(--accent), var(--accent-hot));
+}
+
+.case-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.process-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.process-card {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.tracks .track-tabs {
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.track-card ul {
+  margin: 1rem 0 0;
+  padding-left: 1rem;
+  color: var(--muted);
+  display: grid;
+  gap: 0.35rem;
+}
+
+.testimonial-card .quote {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: 1rem;
+}
+
+.testimonial-card .role {
+  color: var(--muted);
+}
+
+.faq-list {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.faq-item header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.faq-item.open {
+  border-color: var(--accent-hot);
+}
+
+.faq-item p {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+.site-footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--stroke);
+  text-align: center;
+  color: var(--muted);
+  display: grid;
+  gap: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  nav {
+    display: none;
+  }
+
+  .site-header {
+    position: static;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-right {
+    order: -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .pill.primary {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-cta-row {
+    flex-direction: column;
+  }
+}
